@@ -1,19 +1,16 @@
 <template>
   <div id="app">
       <Menu/>
-      <Home/>
   </div>
 </template>
 <script>
 // @ is an alias to /src
   import Menu from '@/components/Vmenu.vue';
-  import Home from './views/Home.vue';
 
 
 export default {
   components: {
     Menu,
-    Home
   }
 };
 </script>
