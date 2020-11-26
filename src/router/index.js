@@ -6,9 +6,14 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home,
+    // children: [        sub rotas
+    //     { path: ":name", name: "content", component: NamesContent }
+    //     { path: ":name", name: "content", component: NamesContent }
+    //     { path: ":name", name: "content", component: NamesContent }
+    //   ],
   },
   {
     path: "/about",

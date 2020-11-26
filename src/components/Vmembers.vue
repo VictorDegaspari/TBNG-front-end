@@ -1,20 +1,20 @@
 <template>
-    <div class="card" >
-  <img src="" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">{{ texto }}</p>
+  <div class="card">
+    <img src="" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text">{{ texto }}</p>
+    </div>
   </div>
-</div>
 </template>
 <script>
 export default {
-  props:{
-  texto: String
+  props: {
+    texto: String
   }
-}
+};
 </script>
 <style scoped>
-.card{
+.card {
   width: 18rem;
 }
 </style>
