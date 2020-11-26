@@ -1,24 +1,20 @@
 <template>
   <div class="home">
-    <Container>
-      <Members texto="Membro 1" />
-      <Members texto="Membro 2" />
-      <Members texto="Membro 3" />
-    </Container>
+    <Footer />
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-
-import Members from "@/components/Vmembers.vue";
-import Container from "@/components/Vcontainers.vue";
-
+import Footer from "@/components/Vfooter.vue";
 export default {
   components: {
-    Members,
-    Container
+    Footer
   }
 };
 </script>
-<style scoped></style>>
+
+<style scoped>
+.home {
+  position: relative;
+  height: 100%;
+}
+</style>

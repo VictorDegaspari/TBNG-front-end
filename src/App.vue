@@ -20,8 +20,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #2c3e50;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
+  margin: 0;
 }
 h1 {
   font-weight: 500;

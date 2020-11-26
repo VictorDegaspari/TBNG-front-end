@@ -40,7 +40,11 @@
               Saber mais
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Membros</a>
+              <a
+                class="dropdown-item"
+                @click="e => this.$router.push({ path: '/members' })"
+                >Membros</a
+              >
               <a
                 class="dropdown-item"
                 @click="e => this.$router.push({ path: '/about' })"

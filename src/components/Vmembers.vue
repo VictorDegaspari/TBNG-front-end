@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img src="" class="card-img-top" alt="..." />
+    <img src="../assets/insta.svg" class="card-img-top" alt="..." />
     <div class="card-body">
       <p class="card-text">{{ texto }}</p>
     </div>

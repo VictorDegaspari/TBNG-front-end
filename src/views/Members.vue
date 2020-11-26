@@ -1,0 +1,42 @@
+<template>
+  <div>
+    <h2>Membros</h2>
+    <!-- <Titles msg="Membros" :margin="[10]" /> -->
+    <Container>
+      <Members texto="Victor Degaspari"></Members>
+      <Members texto="Renato Rodrigues"></Members>
+      <Members texto="Caio Domarco"></Members>
+      <Members texto="Caio Di Bene"></Members>
+    </Container>
+    <Container>
+      <Members texto="Leo Moretti"></Members>
+      <Members texto="Felipe Trevisan"></Members>
+      <Members texto="Raphael Gomes"></Members>
+    </Container>
+    <Footer />
+  </div>
+</template>
+<script>
+// @ is an alias to /src
+
+import Members from "@/components/Vmembers.vue";
+import Container from "@/components/Vcontainers.vue";
+// import Titles from "@/components/Vtitles.vue";
+import Footer from "@/components/Vfooter.vue";
+
+export default {
+  components: {
+    Members,
+    Container,
+    // Titles,
+    Footer
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+h2 {
+  color: #ffffff;
+  text-align: center;
+}
+</style>

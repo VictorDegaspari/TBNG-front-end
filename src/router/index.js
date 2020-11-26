@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Members from "../views/Members.vue";
 
 Vue.use(VueRouter);
 
@@ -9,6 +10,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    // children: [        sub rotas
+    //     { path: ":name", name: "content", component: NamesContent }
+    //     { path: ":name", name: "content", component: NamesContent }
+    //     { path: ":name", name: "content", component: NamesContent }
+    //   ],
+  },
+  {
+    path: "/members",
+    name: "Members",
+    component: Members,
     // children: [        sub rotas
     //     { path: ":name", name: "content", component: NamesContent }
     //     { path: ":name", name: "content", component: NamesContent }
