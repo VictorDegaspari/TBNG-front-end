@@ -18,13 +18,23 @@ export default {
 </script>
 <style lang="scss" scoped>
 .titles {
-  background: rgb(98, 147, 252);
   color: #ffffff;
-  padding-left: 10px;
   border: 8px 8px 0px 0px;
   margin-top: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: 85px;
 }
 h4 {
-  margin: 0;
+  background: rgb(98, 147, 252);
+  margin-bottom: 0px;
+  max-width: 1140px;
+}
+@media (max-width: 998px) {
+  .titles {
+    margin-left: 85px;
+    margin-right: 85px;
+  }
 }
 </style>

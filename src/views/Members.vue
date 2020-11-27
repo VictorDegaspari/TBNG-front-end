@@ -1,7 +1,6 @@
 <template>
   <div class="members">
-    <h2>Membros</h2>
-    <!-- <Titles msg="Membros" :margin="[10]" /> -->
+    <Titles msg="Membros" />
     <Container>
       <Members texto="Victor Degaspari">
         <img src="../assets/insta.svg" class="card-img-top" alt="..."
@@ -27,12 +26,8 @@
         ><img src="../assets/insta.svg" class="card-img-top" alt="..."
       /></Members>
       <Members texto="Matheus Cazelato"
-        ><img
-          src="../assets/insta.svg"
-          class="card-img-top"
-          alt="..."
-        />></Members
-      >
+        ><img src="../assets/insta.svg" class="card-img-top" alt="..."
+      /></Members>
     </Container>
   </div>
 </template>
@@ -41,13 +36,13 @@
 
 import Members from "@/components/Vmembers.vue";
 import Container from "@/components/Vcontainers.vue";
-// import Titles from "@/components/Vtitles.vue";
+import Titles from "@/components/Vtitles.vue";
 
 export default {
   components: {
     Members,
-    Container
-    // Titles,
+    Container,
+    Titles
   }
 };
 </script>
@@ -56,9 +51,6 @@ export default {
 .members {
   height: 100%;
   padding-bottom: 60px;
-}
-h2 {
-  color: #ffffff;
   text-align: center;
 }
 </style>
