@@ -1,13 +1,19 @@
 <template>
-  <div class="container"><slot /></div>
+  <div class="container" :style="'display:'"><slot /></div>
 </template>
 <script>
-export default {};
+export default {
+  display: {
+    default: function() {
+      return ["flex"];
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 .container {
-  padding: 10px;
   display: flex;
+  padding: 10px;
   background: #ffffff;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.274),
     0px 4px 6px rgba(0, 0, 0, 0.05);
@@ -18,7 +24,6 @@ export default {};
 @media (max-width: 998px) {
   .container {
     display: block;
-    background: #3091ff96;
     justify-items: center;
     align-self: center;
     width: fit-content;

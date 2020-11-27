@@ -1,6 +1,7 @@
 <template>
-  <div class="titles" :style="'margin:'">
+  <div class="titles container" :style="'margin:'">
     <h4>{{ msg }}</h4>
+    <slot />
   </div>
 </template>
 <script>
@@ -18,23 +19,27 @@ export default {
 </script>
 <style lang="scss" scoped>
 .titles {
-  color: #ffffff;
   border: 8px 8px 0px 0px;
   margin-top: 20px;
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-left: 85px;
+  background: linear-gradient(125.86deg, #1b76e8 5.96%, #7f9cf5 96.59%);
+  max-width: 1140px;
+  mix-blend-mode: normal;
+  padding-bottom: 20px;
+  /* x */
+
+  box-shadow: inset 0px 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 h4 {
-  background: rgb(98, 147, 252);
   margin-bottom: 0px;
   max-width: 1140px;
-}
-@media (max-width: 998px) {
-  .titles {
-    margin-left: 85px;
-    margin-right: 85px;
-  }
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.14), 0px 2px 9px rgba(0, 0, 0, 0.808),
+    0px 1px 3px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 </style>
