@@ -1,13 +1,18 @@
 <template>
   <div class="home">
-    <Footer />
+    <Container>
+      <Carousel />
+    </Container>
   </div>
 </template>
 <script>
-import Footer from "@/components/Vfooter.vue";
+import Carousel from "@/components/Vcarousel.vue";
+import Container from "@/components/Vcontainers.vue";
+
 export default {
   components: {
-    Footer
+    Carousel,
+    Container
   }
 };
 </script>
@@ -15,6 +20,6 @@ export default {
 <style scoped>
 .home {
   position: relative;
-  height: 100%;
+  height: 100vh;
 }
 </style>

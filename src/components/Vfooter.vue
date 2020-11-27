@@ -9,20 +9,19 @@
 </template>
 <style lang="scss" scoped>
 footer {
-  background: linear-gradient(
-    to right,
-    rgba(0, 26, 110, 0.397),
-    rgba(35, 105, 255, 0.493)
-  );
+  background: linear-gradient(to right, rgb(0, 26, 110), rgb(35, 105, 255));
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
-  bottom: 50px;
+  min-height: 20px;
+  position: fixed;
+  margin-top: auto;
+  bottom: 0px;
   width: 100%;
-  padding: 5px 10px 5px 10px;
+  padding: 5px;
   p {
     color: white;
   }
+  z-index: 10;
 }
 </style>

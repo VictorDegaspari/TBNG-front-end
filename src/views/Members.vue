@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="members">
     <h2>Membros</h2>
     <!-- <Titles msg="Membros" :margin="[10]" /> -->
     <Container>
@@ -13,7 +13,6 @@
       <Members texto="Felipe Trevisan"></Members>
       <Members texto="Raphael Gomes"></Members>
     </Container>
-    <Footer />
   </div>
 </template>
 <script>
@@ -22,19 +21,21 @@
 import Members from "@/components/Vmembers.vue";
 import Container from "@/components/Vcontainers.vue";
 // import Titles from "@/components/Vtitles.vue";
-import Footer from "@/components/Vfooter.vue";
 
 export default {
   components: {
     Members,
-    Container,
+    Container
     // Titles,
-    Footer
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.members {
+  height: 100%;
+  padding-bottom: 60px;
+}
 h2 {
   color: #ffffff;
   text-align: center;

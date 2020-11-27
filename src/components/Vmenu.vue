@@ -23,7 +23,7 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://instagram.com"
+            <a class="nav-link" href="https://instagram.com/tbng_r6/"
               ><img class="inta" src="../assets/insta.svg" alt="qualquer"
             /></a>
           </li>
@@ -50,10 +50,18 @@
                 @click="e => this.$router.push({ path: '/about' })"
                 >Sobre</a
               >
-              <a class="dropdown-item" href="#">Conquistas</a>
+              <a
+                class="dropdown-item"
+                @click="e => this.$router.push({ path: '/achievements' })"
+                >Conquistas</a
+              >
 
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Quero ser um membro</a>
+              <a
+                class="dropdown-item"
+                @click="e => this.$router.push({ path: '/join' })"
+                >Quero ser um membro</a
+              >
             </div>
           </li>
           <li class="nav-item">

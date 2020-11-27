@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Menu />
+    <Menu class="fixed-top" />
+    <Footer />
     <router-view></router-view>
   </div>
 </template>
 <script>
 // @ is an alias to /src
 import Menu from "@/components/Vmenu.vue";
+import Footer from "@/components/Vfooter.vue";
 
 export default {
   components: {
-    Menu
+    Menu,
+    Footer
   }
 };
 </script>
@@ -21,8 +24,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   background: #2c3e50;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
+  padding-top: 5rem;
+}
+.menu-topo {
+  margin-top: 20px;
 }
 h1 {
   font-weight: 500;
@@ -32,10 +39,6 @@ h1 {
   margin: 0;
   text-align: center;
   color: #ffffff;
-  background: linear-gradient(
-    to right,
-    rgba(0, 26, 110, 0.397),
-    rgba(35, 105, 255, 0.493)
-  );
+  background: linear-gradient(to right, rgb(0, 26, 110), rgb(35, 105, 255));
 }
 </style>
