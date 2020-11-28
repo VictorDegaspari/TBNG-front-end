@@ -99,6 +99,7 @@ export default {};
 .insta {
   font-size: 0;
 }
+
 a {
   cursor: pointer;
 }

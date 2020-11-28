@@ -34,7 +34,7 @@ export default {
   border-radius: 8px;
 }
 h4 {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   max-width: 1140px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.14), 0px 2px 9px rgba(0, 0, 0, 0.808),
     0px 1px 3px rgba(0, 0, 0, 0.2);

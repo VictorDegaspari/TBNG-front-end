@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="carrosselTBNG">
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -16,21 +16,21 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../assets/plat.svg" class="d-block w-100" alt="..." />
+          <img src="../assets/tbng2.png" class="d-block w-100" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5>First slide label</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../assets/plat2.svg" class="d-block w-100" alt="..." />
+          <img src="../assets/tbng2.png" class="d-block w-100" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5>Second slide label</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../assets/plat2.svg" class="d-block w-100" alt="..." />
+          <img src="../assets/tbng2.png" class="d-block w-100" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5>Third slide label</h5>
             <p>
@@ -61,6 +61,10 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.carousel-control-prev-icon {
+  color: black !important;
+}
+
 p {
   color: rgb(57, 58, 58);
   background: #ffffff;
