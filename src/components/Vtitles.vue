@@ -27,7 +27,7 @@ export default {
   background: linear-gradient(125.86deg, #1b76e8 5.96%, #7f9cf5 96.59%);
   max-width: 1140px;
   mix-blend-mode: normal;
-  padding-bottom: 20px;
+  padding-bottom: 55px;
   /* x */
 
   box-shadow: inset 0px 4px 2px rgba(0, 0, 0, 0.2);

@@ -22,6 +22,6 @@ footer {
   p {
     color: white;
   }
-  z-index: 10;
+  z-index: 99999;
 }
 </style>
