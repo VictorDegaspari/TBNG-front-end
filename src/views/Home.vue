@@ -11,7 +11,7 @@
       </div>
       <iframe
         src="https://discord.com/widget?id=716347880079622186&theme=dark"
-        width="455"
+        width="325"
         height="500"
         allowtransparency="true"
         frameborder="0"
