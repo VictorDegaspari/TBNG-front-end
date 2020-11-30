@@ -9,6 +9,14 @@
           <img src="../assets/whatsapp.svg" alt="" />
         </a>
       </div>
+      <iframe
+        src="https://discord.com/widget?id=716347880079622186&theme=dark"
+        width="325"
+        height="500"
+        allowtransparency="true"
+        frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+      ></iframe>
     </Titles>
   </div>
 </template>
@@ -29,7 +37,7 @@ export default {
 <style scoped>
 .home {
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 #whatsapp {
   position: fixed;
