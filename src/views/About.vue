@@ -24,8 +24,6 @@
         </transition>
       </Container>
     </Titles>
-    <template id="jogos"><div>oi</div></template>
-    <template id="curiosidades"><div>tchau</div></template>
   </div>
 </template>
 <script>

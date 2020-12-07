@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+  <div>
     <component v-bind:is="component" />
     <button v-on:click="toggle">Toggle</button>
   </div>
