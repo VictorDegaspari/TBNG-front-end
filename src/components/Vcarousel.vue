@@ -25,7 +25,7 @@
           <h1>Solzão slc!</h1>
         </template>
       </b-carousel-slide>
-      <b-carousel-slide>
+      <b-carousel-slide text="1 2 3 time benga 1 2 3 time benga">
         <template #img>
           <img
             class="d-block img-fluid w-100"
@@ -38,11 +38,6 @@
         </template>
       </b-carousel-slide>
     </b-carousel>
-
-    <p class="mt-4">
-      Slide #: {{ slide }}<br />
-      Sliding: {{ sliding }}
-    </p>
   </div>
 </template>
 
