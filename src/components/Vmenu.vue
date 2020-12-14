@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="main-top"><img src="../assets/controll.svg" /></h1>
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" type="light" variant="light">
       <b-navbar-brand>TBNG</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
