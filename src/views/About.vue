@@ -10,25 +10,16 @@
           hoje contamos com 7 membros, mas sempre cabe mais um na família então
           cola com nóis que é sucesso.
         </p>
-        <!-- <button @click.prevent="" class="btn btn-primary">Jogos</button>
-        <p></p>
-        <button @click.prevent="" class="btn btn-secondary">
-          Curiosidades
-        </button> -->
         <select v-model="choice">
           <option value="jogo">Jogos</option>
           <option value="curiosidade">Curiosidades</option>
         </select>
-        <transition name="component-fade" mode="out-in">
-          <component :is="choice"> </component>
-        </transition>
       </Container>
     </Titles>
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import Vue from "vue";
 import Container from "@/components/Vcontainers.vue";
 import Titles from "@/components/Vtitles.vue";
 
@@ -38,19 +29,6 @@ export default {
     Titles
   }
 };
-Vue.component("jogo", {
-  template: "#jogos"
-});
-Vue.component("curiosidade", {
-  template: "#curiosidades"
-});
-
-new Vue({
-  el: "#about-page",
-  data: {
-    choice: "jogos"
-  }
-});
 </script>
 
 <style lang="scss" scoped>
