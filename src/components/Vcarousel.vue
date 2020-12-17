@@ -19,7 +19,7 @@
             class="d-block img-fluid w-100"
             width="1024"
             height="480"
-            src="../assets/tbng2.png"
+            :src="tbng1"
             alt="image slot"
           />
           <h1>Solzão slc!</h1>
@@ -31,7 +31,7 @@
             class="d-block img-fluid w-100"
             width="1024"
             height="480"
-            src="../assets/tbng2.png"
+            :src="tbng1"
             alt="image slot"
           />
           <h1>Raphão ta no estilo!</h1>
@@ -42,9 +42,12 @@
 </template>
 
 <script>
+import tbng1 from "@/assets/tbng2.png";
+
 export default {
   data() {
     return {
+      tbng1: tbng1,
       slide: 0,
       sliding: null
     };
