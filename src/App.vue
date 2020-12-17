@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Spinner :isLoading="isLoading" />
     <Menu class="fixed-top" />
     <Footer />
     <router-view></router-view>
@@ -8,12 +9,25 @@
 <script>
 // @ is an alias to /src
 import Menu from "@/components/Vmenu.vue";
+import Spinner from "@/components/Vspinner.vue";
 import Footer from "@/components/Vfooter.vue";
 
 export default {
   components: {
     Menu,
-    Footer
+    Footer,
+    Spinner
+  },
+  data() {
+    return { isLoading: false };
+  },
+  methods: {
+    logIn() {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 900);
+    }
   }
 };
 </script>
@@ -27,6 +41,9 @@ export default {
   height: 100%;
   margin: 0;
   padding-top: 5rem;
+}
+.fixed-top {
+  z-index: 9999;
 }
 .menu-topo {
   margin-top: 20px;
