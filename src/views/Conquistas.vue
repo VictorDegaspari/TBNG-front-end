@@ -4,45 +4,45 @@
       ><img id="icon-member" src="../assets/trofeu.svg" alt="" />
       <Container>
         <Members texto="Victor Degaspari - season Shifting Tides">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
+          <Titles msg="Top MMR 3606" :style="'background: #2c3e50'">
             <img :src="plat3" />
           </Titles>
         </Members>
-        <Members texto="Renato Rodrigues - season 6">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
+        <Members texto="Renato Rodrigues - season Phantom Sight">
+          <Titles msg="Top MMR 3434" :style="'background: #2c3e50'">
             <img :src="plat3" />
           </Titles>
         </Members>
-        <Members texto="Raphael Gomes - season 6">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
+        <Members texto="Raphael Gomes - season Shifting Tides">
+          <Titles msg="Top MMR 3887" :style="'background: #2c3e50'">
             <img :src="plat2" />
           </Titles>
         </Members>
-        <Members texto="Caio Domarco - season 7">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
+        <Members texto="Caio Domarco - season Steel Wave">
+          <Titles msg="Top MMR 3387" :style="'background: #2c3e50'">
             <img :src="plat3" />
           </Titles>
         </Members>
       </Container>
       <Container>
-        <Members texto="Leo Moretti - season 6">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
+        <Members texto="Leo Moretti - season Steel Wave">
+          <Titles msg="Top MMR 3383" :style="'background: #2c3e50'">
             <img :src="plat3" />
           </Titles>
         </Members>
-        <Members texto="Caio Di Bene - season 6">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
+        <Members texto="Caio Di Bene">
+          <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
             <img :src="plat3" />
           </Titles>
         </Members>
-        <Members texto="Felipe Trevisan - season 6">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
-            <img :src="plat3" />
+        <Members texto="Felipe Trevisan">
+          <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
+            <img :src="gold1" />
           </Titles>
         </Members>
-        <Members texto="Matheus Cazelato - season 6">
-          <Titles msg="Top MMR 3330" :style="'background: #2c3e50'">
-            <img :src="plat3" />
+        <Members texto="Matheus Cazelato">
+          <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
+            <img :src="plat" />
           </Titles>
         </Members>
       </Container>
@@ -55,9 +55,10 @@
 import Members from "@/components/Vmembers.vue";
 import Container from "@/components/Vcontainers.vue";
 import Titles from "@/components/Vtitles.vue";
-import plat from "@/assets/plat.svg";
+import plat from "@/assets/platinum-1.svg";
 import plat2 from "@/assets/platinum-2.svg";
 import plat3 from "@/assets/platinum-3.svg";
+import gold1 from "@/assets/gold-1.svg";
 
 export default {
   components: {
@@ -69,7 +70,8 @@ export default {
     return {
       plat: plat,
       plat2: plat2,
-      plat3: plat3
+      plat3: plat3,
+      gold1: gold1
     };
   }
 };
@@ -89,5 +91,8 @@ export default {
 img {
   width: 100%;
   height: 250px;
+}
+.card-text {
+  font-size: 19px;
 }
 </style>
