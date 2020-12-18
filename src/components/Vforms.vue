@@ -8,6 +8,7 @@
           class="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
+          required
         />
         <small id="emailHelp" class="form-text text-muted"
           >We'll never share your email with anyone else.</small
@@ -19,6 +20,7 @@
           type="password"
           class="form-control"
           id="exampleInputPassword1"
+          required
         />
       </div>
       <div class="form-group form-check">
@@ -29,3 +31,11 @@
     </form>
   </div>
 </template>
+<style lang="css" scoped>
+.formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+</style>
