@@ -3,7 +3,9 @@
     <Titles msg="Se juntar ao clã"
       ><img id="icon-member" src="../assets/group.svg" alt="" />
       <Container>
-        <a href="mailto:vdegaspari.vm@gmail.com">Nos mande um email!</a>
+        <a class="SendEmail" href="mailto:vdegaspari.vm@gmail.com"
+          >Nos mande um email!</a
+        >
       </Container>
       <Container><Form /></Container>
     </Titles>
@@ -35,5 +37,8 @@ export default {
   max-width: 120.7px;
   max-height: 120.7px;
   margin: 10px;
+}
+.SendEmail {
+  width: 100%;
 }
 </style>
