@@ -29,3 +29,11 @@
     </form>
   </div>
 </template>
+<style lang="css" scoped>
+.formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+</style>
