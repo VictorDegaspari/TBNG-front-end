@@ -1,4 +1,5 @@
-# TBNG-app
+
+# TBNG-app 🎮
 
 ## Project setup
 ```
