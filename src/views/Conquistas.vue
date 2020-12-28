@@ -37,7 +37,7 @@
         </Members>
         <Members texto="Felipe Trevisan">
           <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
-            <b-img :src="gold1" />
+            <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Matheus Cazelato">

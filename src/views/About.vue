@@ -12,11 +12,13 @@
         </p>
         <b-button variant="outline-primary" @click="component= 'jogos'">Jogos</b-button>
         <b-button variant="outline-success" @click="component= 'curiosidades'">Curiosidades</b-button>
+        <b-button  variant="outline-danger" @click="component= 'youtube'">YouTube</b-button>
         <p></p>
-       
-        <component :is="component"></component>
+       <transition name="fade" mode="out-in" :duration="{enter: 0, leave:0 }" appear >
+        <component ativaSpinner  :is="component"></component>
+       </transition>
         <p></p>
-        <Container class="comments">
+        <!-- <Container class="comments">
           <form @submit="submit"  method="post">
           <input  v-model="choices.description" />
           <b-button>Enviar</b-button>
@@ -24,9 +26,10 @@
           <pre>
           <div v-for="choices in log" v-html="enr" :key="choices.description"></div>
           </pre>
-        </Container>
+        </Container> -->
       </Container>
     </Titles>
+    <Spinner :isLoading="isLoading"/>
   </div>
 </template>
 <script>
@@ -35,15 +38,21 @@ import Container from "@/components/Vcontainers.vue";
 import Titles from "@/components/Vtitles.vue";
 import curiosidades from '@/components/Vcuriosidades.vue';
 import jogos from '@/components/Vjogos.vue';
+import youtube from '@/components/Vyoutube.vue';
+import Spinner from "@/components/Vspinner.vue";
+
 
 export default {
   components: {
     'jogos':jogos,
     'curiosidades':curiosidades,
+    'youtube':youtube,
     Container,
     Titles,
+    Spinner
   },
   data: () => ({
+    isLoading: false,
     component:'jogos',
     choices: {
       description: "",
@@ -55,7 +64,14 @@ export default {
       this.log.push(`Save ${JSON.stringfy(this.choices)}`);
       $event.preventDefault();
     },
-  },
+    ativaSpinner() {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 100);
+   
+    }
+  }
 };
 </script>
 

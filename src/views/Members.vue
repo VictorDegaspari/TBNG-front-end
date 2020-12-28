@@ -58,7 +58,7 @@ export default {
     Titles,
     Spinner
   },
-  data: () => {
+  data() {
     return { isLoading: false, img1: img1 };
   },
   methods: {
