@@ -1,4 +1,9 @@
 {
+  "author": {
+    "email": "vdegaspari.vm@gmail.com",
+    "name": "Victor Manoel Degaspari",
+    "url": "https://tbng.vercel.app"
+  },
   "name": "vue-app",
   "version": "0.1.0",
   "private": true,

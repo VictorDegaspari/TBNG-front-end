@@ -1,48 +1,48 @@
 <template>
   <div class="members">
     <Titles msg="Maiores elos Rainbow Six"
-      ><img id="icon-member" src="../assets/trofeu.svg" alt="" />
+      ><b-img id="icon-member" src="../assets/trofeu.svg" alt="" />
       <Container>
         <Members texto="Victor Degaspari - season Shifting Tides">
           <Titles msg="Top MMR 3606" :style="'background: #2c3e50'">
-            <img :src="plat3" />
+            <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Renato Rodrigues - season Phantom Sight">
           <Titles msg="Top MMR 3434" :style="'background: #2c3e50'">
-            <img :src="plat3" />
+            <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Raphael Gomes - season Shifting Tides">
           <Titles msg="Top MMR 3887" :style="'background: #2c3e50'">
-            <img :src="plat2" />
+            <b-img :src="plat2" />
           </Titles>
         </Members>
         <Members texto="Caio Domarco - season Steel Wave">
           <Titles msg="Top MMR 3387" :style="'background: #2c3e50'">
-            <img :src="plat3" />
+            <b-img :src="plat3" />
           </Titles>
         </Members>
       </Container>
       <Container>
         <Members texto="Leo Moretti - season Steel Wave">
           <Titles msg="Top MMR 3383" :style="'background: #2c3e50'">
-            <img :src="plat3" />
+            <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Caio Di Bene">
           <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
-            <img :src="plat3" />
+            <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Felipe Trevisan">
           <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
-            <img :src="gold1" />
+            <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Matheus Cazelato">
           <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
-            <img :src="plat" />
+            <b-img :src="plat" />
           </Titles>
         </Members>
       </Container>
@@ -88,7 +88,7 @@ export default {
   max-height: 120.7px;
   margin: 10px;
 }
-img {
+b-img {
   width: 100%;
   height: 250px;
 }
