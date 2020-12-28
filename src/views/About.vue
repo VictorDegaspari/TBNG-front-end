@@ -10,7 +10,7 @@
           hoje contamos com 7 membros, mas sempre cabe mais um na família então
           cola com nóis que é sucesso.
         </p>
-        <b-button variant="outline-primary" @click="component= 'jogos'">Jogos</b-button>
+        <b-button variant="outline-primary" @click="component= 'jogos'" aria-selected="true">Jogos</b-button>
         <b-button variant="outline-success" @click="component= 'curiosidades'">Curiosidades</b-button>
         <b-button  variant="outline-danger" @click="component= 'youtube'">YouTube</b-button>
         <p></p>
