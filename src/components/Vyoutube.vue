@@ -1,17 +1,19 @@
 <template>
   <div>
-    <iframe id="ytplayer" type="text/html" width="100%" height="360"
-  src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-  frameborder="10"/>
+    <iframe
+      class="youtube-player"
+      type="text/html"
+      width="100%"
+      height="485"
+      src="http://www.youtube.com/embed/VIDEO_ID"
+      frameborder="0"
+    >
+    </iframe>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>
