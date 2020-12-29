@@ -22,6 +22,9 @@
           >
           <b-nav-item @click="e => this.$router.push({ path: '/join' })">
             Become a member</b-nav-item
+          >   <b-nav-item @click="e => this.$router.push({ path: '/Vip' })">
+            VIP
+            </b-nav-item
           >
         </b-navbar-nav>
 
@@ -51,7 +54,7 @@
               <em>User</em>
             </template>
             <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="https://google.com">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>

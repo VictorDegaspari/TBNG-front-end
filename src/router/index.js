@@ -5,6 +5,7 @@ import Conquistas from "../views/Conquistas.vue";
 import Home from "../views/Home.vue";
 import Members from "../views/Members.vue";
 import NewMember from "../views/NewMember.vue";
+import Vip from "../views/Vip.vue";
 
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -17,6 +18,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    // children: [        sub rotas
+    //     { path: ":name", name: "content", component: NamesContent }
+    //     { path: ":name", name: "content", component: NamesContent }
+    //     { path: ":name", name: "content", component: NamesContent }
+    //   ],
+  },
+  {
+    path: "/Vip",
+    name: "Vip",
+    component: Vip,
     // children: [        sub rotas
     //     { path: ":name", name: "content", component: NamesContent }
     //     { path: ":name", name: "content", component: NamesContent }
