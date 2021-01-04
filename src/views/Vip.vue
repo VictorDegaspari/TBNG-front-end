@@ -1,35 +1,39 @@
 <template>
   <div class="vip-container">
-    <Container>
-      <div class="overflow-auto">
-        <b-pagination
-          v-model="currentPage"
-          :total-rows="rows"
-          :per-page="perPage"
-          aria-controls="my-table"
-        ></b-pagination>
-        <h1 v-for="members in vip" :key="members.id_members">
-          {{ members.nome }}
-        </h1>
-        <p class="mt-3">Current Page: {{ currentPage }}</p>
+    <Titles msg="VIP 💎">
+      <Container>
+        <div class="overflow-auto">
+          <b-pagination
+            v-model="currentPage"
+            :total-rows="rows"
+            :per-page="perPage"
+            aria-controls="my-table"
+          ></b-pagination>
+          <h1 v-for="members in vip" :key="members.id_members">
+            {{ members.nome }}
+          </h1>
+          <p class="mt-3">Current Page: {{ currentPage }}</p>
 
-        <b-table
-          id="my-table"
-          :items="items"
-          :per-page="perPage"
-          :current-page="currentPage"
-          small
-        ></b-table>
-      </div>
-    </Container>
+          <b-table
+            id="my-table"
+            :items="items"
+            :per-page="perPage"
+            :current-page="currentPage"
+            small
+          ></b-table>
+        </div>
+      </Container>
+    </Titles>
   </div>
 </template>
 
 <script>
 import Container from "@/components/Vcontainers.vue";
+import Titles from "@/components/Vtitles.vue";
 export default {
   components: {
-    Container
+    Container,
+    Titles
   },
   data() {
     return {
@@ -63,6 +67,5 @@ export default {
 }
 .vip-container {
   height: 100vh;
-  padding-top: 30px;
 }
 </style>
