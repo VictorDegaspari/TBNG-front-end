@@ -10,13 +10,27 @@
           hoje contamos com 7 membros, mas sempre cabe mais um na família então
           cola com nóis que é sucesso.
         </p>
-        <b-button variant="outline-primary" @click="component= 'jogos'" aria-selected="true">Jogos</b-button>
-        <b-button variant="outline-success" @click="component= 'curiosidades'">Curiosidades</b-button>
-        <b-button  variant="outline-danger" @click="component= 'youtube'">YouTube</b-button>
+        <b-button
+          variant="outline-primary"
+          @click="component = 'jogos'"
+          aria-selected="true"
+          >Jogos</b-button
+        >
+        <b-button variant="outline-success" @click="component = 'curiosidades'"
+          >Curiosidades</b-button
+        >
+        <b-button variant="outline-danger" @click="component = 'youtube'"
+          >YouTube</b-button
+        >
         <p></p>
-       <transition name="fade" mode="out-in" :duration="{enter: 0, leave:0 }" appear >
-        <component ativaSpinner  :is="component"></component>
-       </transition>
+        <transition
+          name="fade"
+          mode="out-in"
+          :duration="{ enter: 0, leave: 0 }"
+          appear
+        >
+          <component ativaSpinner :is="component"></component>
+        </transition>
         <p></p>
         <!-- <Container class="comments">
           <form @submit="submit"  method="post">
@@ -29,33 +43,32 @@
         </Container> -->
       </Container>
     </Titles>
-    <Spinner :isLoading="isLoading"/>
+    <Spinner :isLoading="isLoading" />
   </div>
 </template>
 <script>
 // @ is an alias to /src
 import Container from "@/components/Vcontainers.vue";
 import Titles from "@/components/Vtitles.vue";
-import curiosidades from '@/components/Vcuriosidades.vue';
-import jogos from '@/components/Vjogos.vue';
-import youtube from '@/components/Vyoutube.vue';
+import curiosidades from "@/components/Vcuriosidades.vue";
+import jogos from "@/components/Vjogos.vue";
+import youtube from "@/components/Vyoutube.vue";
 import Spinner from "@/components/Vspinner.vue";
-
 
 export default {
   components: {
-    'jogos':jogos,
-    'curiosidades':curiosidades,
-    'youtube':youtube,
+    jogos: jogos,
+    curiosidades: curiosidades,
+    youtube: youtube,
     Container,
     Titles,
     Spinner
   },
   data: () => ({
     isLoading: false,
-    component:'jogos',
+    component: "jogos",
     choices: {
-      description: "",
+      description: ""
     },
     log: []
   }),
@@ -69,7 +82,6 @@ export default {
       setTimeout(() => {
         this.isLoading = false;
       }, 100);
-   
     }
   }
 };
@@ -87,7 +99,7 @@ export default {
   max-height: 120.7px;
   margin: 10px;
 }
-.comments{
+.comments {
   color: black;
 }
 </style>

@@ -13,12 +13,11 @@ import Footer from "@/components/Vfooter.vue";
 export default {
   components: {
     Menu,
-    Footer,
+    Footer
   },
   data() {
     return { isLoading: false };
-  },
- 
+  }
 };
 </script>
 <style lang="css">
@@ -27,8 +26,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #2c3e50;
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  height: 100vh;
   margin: 0;
   padding-top: 5rem;
 }
