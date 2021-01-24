@@ -5,21 +5,29 @@
       <Container>
         <Members texto="Victor Degaspari - season Shifting Tides">
           <Titles msg="Top MMR 3606" :style="'background: #2c3e50'">
+            <SpinnerImages v-show="SpinnerShow" />
+
             <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Renato Rodrigues - season Phantom Sight">
           <Titles msg="Top MMR 3434" :style="'background: #2c3e50'">
+            <SpinnerImages v-show="SpinnerShow" />
+
             <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Raphael Gomes - season Shifting Tides">
           <Titles msg="Top MMR 3887" :style="'background: #2c3e50'">
+            <SpinnerImages v-show="SpinnerShow" />
+
             <b-img :src="plat2" />
           </Titles>
         </Members>
         <Members texto="Caio Domarco - season Steel Wave">
           <Titles msg="Top MMR 3387" :style="'background: #2c3e50'">
+            <SpinnerImages v-show="SpinnerShow" />
+
             <b-img :src="plat3" />
           </Titles>
         </Members>
@@ -27,21 +35,27 @@
       <Container>
         <Members texto="Leo Moretti - season Steel Wave">
           <Titles msg="Top MMR 3383" :style="'background: #2c3e50'">
-            <b-img :src="plat3" />
+            <SpinnerImages v-show="SpinnerShow" />
+            <b-img :src="plat3" :style="'positions:relative; z-index: 9999'" />
           </Titles>
         </Members>
         <Members texto="Caio Di Bene">
           <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
+            <SpinnerImages v-show="SpinnerShow" />
             <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Felipe Trevisan">
           <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
+            <SpinnerImages v-show="SpinnerShow" />
+
             <b-img :src="plat3" />
           </Titles>
         </Members>
         <Members texto="Matheus Cazelato">
           <Titles msg="Top MMR ...." :style="'background: #2c3e50'">
+            <SpinnerImages v-show="SpinnerShow" />
+
             <b-img :src="plat" />
           </Titles>
         </Members>
@@ -54,6 +68,7 @@
 
 import Members from "@/components/Vmembers.vue";
 import Container from "@/components/Vcontainers.vue";
+import SpinnerImages from "@/components/VspinnerImages.vue";
 import Titles from "@/components/Vtitles.vue";
 import plat from "@/assets/platinum-1.svg";
 import plat2 from "@/assets/platinum-2.svg";
@@ -64,10 +79,12 @@ export default {
   components: {
     Members,
     Container,
-    Titles
+    Titles,
+    SpinnerImages
   },
   data() {
     return {
+      SpinnerShow: false,
       plat: plat,
       plat2: plat2,
       plat3: plat3,

@@ -1,9 +1,6 @@
 /* eslint-disable prettier/prettier */
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Conquistas from "../views/Conquistas.vue";
-import Home from "../views/Home.vue";
-import Members from "../views/Members.vue";
 import NewMember from "../views/NewMember.vue";
 import Vip from "../views/Vip.vue";
 
@@ -17,52 +14,30 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
-    // children: [        sub rotas
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //   ],
+    component: () =>
+      import(/* webpackChunkName: "achievements" */ "../views/Home.vue"),
   },
   {
     path: "/Vip",
     name: "Vip",
     component: Vip,
-    // children: [        sub rotas
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //   ],
   },
   {
     path: "/achievements",
     name: "Conquistas",
-    component: Conquistas,
-    // children: [        sub rotas
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //   ],
+    component: () =>
+      import(/* webpackChunkName: "achievements" */ "../views/Conquistas.vue"),
   },
   {
     path: "/join",
     name: "NewMember",
     component: NewMember,
-    // children: [        sub rotas
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //   ],
   },
   {
     path: "/members",
     name: "Members",
-    component: Members,
-    // children: [        sub rotas
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //     { path: ":name", name: "content", component: NamesContent }
-    //   ],
+    component: () =>
+      import(/* webpackChunkName: "members" */ "../views/Members.vue"),
   },
   {
     path: "/about",
