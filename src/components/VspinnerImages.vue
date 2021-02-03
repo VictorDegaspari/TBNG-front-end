@@ -3,7 +3,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  source: {
+    type: String,
+    required: true
+  }
+};
 </script>
 
 <style scoped>
