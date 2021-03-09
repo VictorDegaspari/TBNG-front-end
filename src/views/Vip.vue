@@ -1,7 +1,7 @@
 <template>
   <div class="vip-container">
-    <Titles msg="VIP 💎">
-      <Container>
+    <Titles msg="Members 💎">
+      <Container v-scrollanimation>
         <div class="overflow-auto">
           <b-pagination
             v-model="currentPage"
@@ -14,14 +14,11 @@
           <b-table
             id="my-table"
             :per-page="perPage"
-            :items="items"
+            :items="members"
             :current-page="currentPage"
             small
           >
           </b-table>
-          <h1 v-for="member in members" :key="member.id">
-            {{ member.nome }}
-          </h1>
         </div>
       </Container>
     </Titles>
@@ -41,29 +38,24 @@ export default {
     return {
       members: {},
       vip: [],
-      perPage: 3,
-      currentPage: 1,
-      items: [
-        { id: 1, first_name: "Fred", last_name: "Flintstone" },
-        { id: 2, first_name: "Wilma", last_name: "Flintstone" },
-        { id: 3, first_name: "Barney", last_name: "Rubble" },
-        { id: 4, first_name: "Betty", last_name: "Rubble" },
-        { id: 5, first_name: "Pebbles", last_name: "Flintstone" },
-        { id: 6, first_name: "Bamm Bamm", last_name: "Rubble" },
-        { id: 7, first_name: "The Great", last_name: "Gazzoo" },
-        { id: 8, first_name: "Rockhead", last_name: "Slate" },
-        { id: 9, first_name: "Pearl", last_name: "Slaghoople" }
-      ]
+      perPage: 4,
+      currentPage: 1
     };
   },
   computed: {
     rows() {
-      return this.items.length;
+      return this.members.length;
     }
   },
   methods: {
     async chamaApi() {
       this.members = await apiClient.getMember();
+    },
+    forNomes() {
+      for (let index = 0; index < this.members.length; index++) {
+        let membro = this.members;
+        console.log(membro);
+      }
     }
   },
   mounted() {
@@ -77,5 +69,14 @@ export default {
 }
 .vip-container {
   height: 100vh;
+}
+.before-enter {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  transform: translatey(10px);
+}
+.enter {
+  opacity: 1;
+  transform: translatey(0px);
 }
 </style>
