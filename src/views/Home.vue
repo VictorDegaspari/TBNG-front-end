@@ -10,6 +10,7 @@
         </a>
       </div>
       <iframe
+        v-scrollanimation
         src="https://discord.com/widget?id=716347880079622186&theme=dark"
         width="73%"
         height="500"
@@ -17,7 +18,7 @@
         frameborder="0"
         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
       ></iframe>
-      <b-img class="gif" :src="gif" />
+      <b-img v-scrollanimation class="gif" :src="gif" />
     </Titles>
   </div>
 </template>
@@ -56,5 +57,12 @@ export default {
   border-radius: 8px;
   box-shadow: 8px 8px rgba(0, 0, 0, 0.205);
   margin-bottom: 10px;
+}
+.before-enter {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+.enter {
+  opacity: 1;
 }
 </style>

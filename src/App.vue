@@ -33,7 +33,7 @@ export default {
   position: relative;
 }
 .fixed-top {
-  z-index: 9999;
+  z-index: 9;
 }
 .menu-topo {
   margin-top: 20px;

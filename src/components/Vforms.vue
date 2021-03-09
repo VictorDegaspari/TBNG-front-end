@@ -1,96 +1,91 @@
 <template>
   <div class="formulario">
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form>
       <b-form-group
+        v-scrollanimation
         id="input-group-1"
-        label="Email address:"
+        label="Seu nome:"
         label-for="input-1"
         description="We'll never share your email with anyone else."
       >
         <b-form-input
+          v-scrollanimation
           id="input-1"
-          v-model="form.email"
-          type="email"
-          placeholder="Enter email"
+          v-model="member.nome"
+          type="text"
+          placeholder="Seu nome"
           required
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
+      <b-form-group
+        v-scrollanimation
+        id="input-group-2"
+        label="Seu apelido:"
+        label-for="input-2"
+        description="Pode ser do LOL, Discord, etc."
+      >
         <b-form-input
+          v-scrollanimation
           id="input-2"
-          v-model="form.name"
-          placeholder="Enter name"
+          v-model="member.nickname"
+          placeholder="Seu apelido"
           required
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-3" label="Food:" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="form.food"
-          :options="foods"
-          required
-        ></b-form-select>
-      </b-form-group>
+      <b-form-checkbox v-model="member.vip" :value="'Sim'">Vip</b-form-checkbox>
+      <b-form-checkbox v-model="member.vip" :value="'Não'"
+        >Apenas um membro</b-form-checkbox
+      >
 
-      <b-form-group id="input-group-4" v-slot="{ ariaDescribedby }">
-        <b-form-checkbox-group
-          v-model="form.checked"
-          id="checkboxes-4"
-          :aria-describedby="ariaDescribedby"
-        >
-          <b-form-checkbox value="me">Check me out</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
-        </b-form-checkbox-group>
-      </b-form-group>
-
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button @click.prevent="onSubmit()" variant="primary">Submit</b-button>
     </b-form>
-    <!-- <b-card class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
-    </b-card> -->
   </div>
 </template>
 
 <script>
+import apiClient from "../utils/apiClient";
+
 export default {
+  components: {},
   data() {
     return {
-      form: {
-        email: "",
-        name: "",
-        food: null,
-        checked: []
-      },
-      foods: [
-        { text: "Select One", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn"
-      ],
-      show: true
+      member: {}
     };
   },
   methods: {
-    onSubmit(event) {
-      event.preventDefault();
-      alert(JSON.stringify(this.form));
+    makeToast(variant = null) {
+      if (variant == "success") {
+        this.$bvToast.toast("Usuário criado com sucesso!", {
+          title: "Sucesso",
+          variant: variant,
+          solid: true
+        });
+      }
+      if (variant == "danger") {
+        this.$bvToast.toast(
+          "Erro ao criar usuário, lembre-se de preencher os campos corretamente.",
+          {
+            title: "Erro!",
+            variant: variant,
+            solid: true
+          }
+        );
+      }
     },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.food = null;
-      this.form.checked = [];
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
+    async onSubmit() {
+      try {
+        await apiClient.createMember(this.member);
+        this.makeToast("success");
+      } catch (err) {
+        if (err.data != null) {
+          this.error = err.data;
+          this.makeToast("danger");
+        } else {
+          this.error = null;
+        }
+      }
     }
   }
 };
@@ -101,5 +96,14 @@ export default {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+.before-enter {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  transform: translateX(30px);
+}
+.enter {
+  opacity: 1;
+  transform: translateX(0px);
 }
 </style>
