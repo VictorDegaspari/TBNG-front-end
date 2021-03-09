@@ -3,13 +3,13 @@
 const axios = require("axios");
 const urljoin = require("url-join");
 const localStore = require("./localStorage");
-const queryString = require("query-string");
+// const queryString = require("query-string");
 
 function getUrl() {
   if (process.browser) {
     switch (window.location.hostname) {
       case "localhost":
-        return "http://localhost:8000/";
+        return "http://localhost:8000";
     }
   }
   return "";
@@ -51,9 +51,9 @@ function internalRequest(method, url, data, skipToken) {
     });
 }
 
-function internalDelete(url) {
-  return internalRequest("delete", url, null);
-}
+// function internalDelete(url) {
+//   return internalRequest("delete", url, null);
+// }
 
 function internalGet(url) {
   return internalRequest("get", url, null);
@@ -63,13 +63,13 @@ function internalPost(url, data, skipToken) {
   return internalRequest("post", url, data, skipToken);
 }
 
-function internalPut(url, data) {
-  return internalRequest("put", url, data);
-}
+// function internalPut(url, data) {
+//   return internalRequest("put", url, data);
+// }
 
-function internalPatch(url, data) {
-  return internalRequest("patch", url, data);
-}
+// function internalPatch(url, data) {
+//   return internalRequest("patch", url, data);
+// }
 class ApiClient {
   async login(username, password) {
     const payload = {
@@ -85,6 +85,9 @@ class ApiClient {
   // CLIENTE
   createMember(obj) {
     return internalPost("members/", obj);
+  }
+  getMember(obj) {
+    return internalGet("members/", obj);
   }
 }
 

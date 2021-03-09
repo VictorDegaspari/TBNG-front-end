@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-scrollanimation>
     <b-carousel
       id="carousel-1"
       v-model="slide"
@@ -62,3 +62,4 @@ export default {
   }
 };
 </script>
+<style scoped></style>

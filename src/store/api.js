@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 function getUrl() {
-  return "https://backend-pinheiro.doencasnegligenciadas.com.br/api";
+  return "";
 }
 
 async function internalRequest({ method, url, data, token }) {

@@ -9,18 +9,19 @@
             :per-page="perPage"
             aria-controls="my-table"
           ></b-pagination>
-          <h1 v-for="members in vip" :key="members.id_members">
-            {{ members.nome }}
-          </h1>
           <p class="mt-3">Current Page: {{ currentPage }}</p>
 
           <b-table
             id="my-table"
-            :items="items"
             :per-page="perPage"
+            :items="items"
             :current-page="currentPage"
             small
-          ></b-table>
+          >
+          </b-table>
+          <h1 v-for="member in members" :key="member.id">
+            {{ member.nome }}
+          </h1>
         </div>
       </Container>
     </Titles>
@@ -30,6 +31,7 @@
 <script>
 import Container from "@/components/Vcontainers.vue";
 import Titles from "@/components/Vtitles.vue";
+import apiClient from "../utils/apiClient";
 export default {
   components: {
     Container,
@@ -37,6 +39,7 @@ export default {
   },
   data() {
     return {
+      members: {},
       vip: [],
       perPage: 3,
       currentPage: 1,
@@ -58,7 +61,14 @@ export default {
       return this.items.length;
     }
   },
-  mounted() {}
+  methods: {
+    async chamaApi() {
+      this.members = await apiClient.getMember();
+    }
+  },
+  mounted() {
+    this.chamaApi();
+  }
 };
 </script>
 <style scoped>
