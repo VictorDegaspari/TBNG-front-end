@@ -27,13 +27,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   background: #2c3e50;
   /* width: 100%; */
-  height: 100%;
+  height: fit-content;
   margin: 0;
   padding-top: 5rem;
   position: relative;
 }
 .fixed-top {
-  z-index: 9;
+  z-index: 999;
 }
 .menu-topo {
   margin-top: 20px;
