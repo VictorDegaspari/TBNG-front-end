@@ -2,7 +2,7 @@
   <div class="members">
     <Titles msg="Membros"
       ><img id="icon-member" src="../assets/membros.svg" alt="" />
-      <div class="form__group field">
+      <div class="form__group field input-search">
         <input
           type="input"
           class="form__field"
@@ -166,10 +166,10 @@ img {
 span {
   font-weight: bold;
 }
-$primary: #00ffd5b7;
-$secondary: #8bf500;
+$primary: #ffffffb7;
+$secondary: #f500ac;
 $white: rgb(221, 221, 221);
-$gray: #16ff29;
+$gray: #16dcff;
 .form__group {
   position: relative;
   padding: 15px 0 0;
@@ -179,7 +179,7 @@ $gray: #16ff29;
 
 .form__field {
   font-family: inherit;
-  width: 100%;
+  width: 80%;
   border: 0;
   border-bottom: 2px solid $gray;
   outline: 0;
@@ -222,7 +222,15 @@ $gray: #16ff29;
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, $primary, $secondary);
+  border-image: linear-gradient(
+    to right,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
   border-image-slice: 1;
 }
 /* reset input */
@@ -233,17 +241,11 @@ $gray: #16ff29;
   }
 }
 /* demo */
-body {
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
-  background-color: #222222;
-}
-.form__field {
+
+.input-search {
   width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 </style>
