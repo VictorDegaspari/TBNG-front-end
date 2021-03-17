@@ -9,7 +9,7 @@
           placeholder="Digite o nome do Símio"
           name="name"
           id="name"
-          required
+          autocomplete="off"
           v-model="searchQuery"
         />
         <label for="name" class="form__label">Digite o nome do Símio</label>
