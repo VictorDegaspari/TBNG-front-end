@@ -10,6 +10,10 @@ function getUrl() {
     switch (window.location.hostname) {
       case "localhost":
         return "http://localhost:8000";
+      case "127.0.0.1":
+        return "http://127.0.0.1:8000";
+      case "tbngbackend":
+        return "https://tbngbackend.herokuapp.com/";
     }
   }
   return "";

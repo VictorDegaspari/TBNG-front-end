@@ -2,42 +2,34 @@
   <div class="members">
     <Titles msg="Membros"
       ><img id="icon-member" src="../assets/membros.svg" alt="" />
-      <Container id="display-members">
-        <Members texto="Victor Degaspari">
-          <a href="https://www.instagram.com/victor.degaspari"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-        <Members texto="Renato Rodrigues">
-          <a href="https://www.instagram.com/renato_schlichting/"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-        <Members texto="Raphael Gomes">
-          <a href="https://www.instagram.com/raphael_antoneli_gomes/"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-        <Members texto="Caio Domarco">
-          <a href="https://www.instagram.com/caio.sousa02/"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-      </Container>
-      <Container>
-        <Members texto="Leo Moretti">
-          <a href="https://www.instagram.com/leozmoretti/"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-        <Members texto="Caio Di Bene">
-          <a href="https://www.instagram.com/caiodibene10/"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-        <Members texto="Felipe Trevisan">
-          <a href="https://www.instagram.com/felipe_trevisan17/"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-        <Members texto="Matheus Cazelato">
-          <a href="https://www.instagram.com/len_ha_dor/"
-            ><img @click="ativaSpinner" :src="img1" class="card-img-top"/></a
-        ></Members>
-      </Container>
+      <div class="form__group field">
+        <input
+          type="input"
+          class="form__field"
+          placeholder="Digite o nome do Símio"
+          name="name"
+          id="name"
+          required
+          v-model="searchQuery"
+        />
+        <label for="name" class="form__label">Digite o nome do Símio</label>
+      </div>
+
+      <div v-for="item in resultQuery" :key="item.id" class="card-body">
+        <Container
+          id="display-members"
+          v-scrollanimation
+          :style="'align-items: center;justify-content: center;'"
+        >
+          <Members v-if="resources.length">
+            <a :href="item.instagram"
+              ><img @click="ativaSpinner" :src="item.image" class="card-img-top"
+            /></a>
+            <span>{{ item.cargo }}:</span>
+            <p target="_blank">{{ item.title }}</p>
+          </Members>
+        </Container>
+      </div>
     </Titles>
     <Spinner :isLoading="isLoading" />
   </div>
@@ -59,7 +51,83 @@ export default {
     Spinner
   },
   data() {
-    return { isLoading: false, img1: img1 };
+    return {
+      isLoading: false,
+      img1: img1,
+      searchQuery: null,
+      resources: [
+        {
+          title: "Victor Degaspari",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/159942263_278880663619808_5293847137169899799_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=4ekhHmRRV8EAX-3gP92&oh=00381a9b3b399a82582133c06ccffbc3&oe=607AC801",
+          instagram: "https://www.instagram.com/victor.degaspari",
+          cargo: "Administrador"
+        },
+        {
+          title: "Renato Rodrigues",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/64816215_1271694649652460_7106394240183173120_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=eSYE2XCL5jwAX8jfTPm&oh=cba4158854d1b697d936383441236296&oe=607AD604",
+          instagram: "https://www.instagram.com/renato_schlichting/",
+          cargo: "Membro"
+        },
+        {
+          title: "Raphael Gomes",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/159095254_191196576107297_4717801493987338561_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=GTjPCqtjsfkAX_F93wO&oh=f68cf8c95adf59762aef1b36463ff4bb&oe=6079423B",
+          instagram: "https://www.instagram.com/victor.degaspari",
+          cargo: "Membro"
+        },
+        {
+          title: "Caio Domarco",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/107844442_306647153853421_386564745923669609_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=ttNbkLzxaxwAX9aSMNh&oh=8765f2047bb3d56e95755294b1bfb3a1&oe=607AE034",
+          instagram: "https://www.instagram.com/caio.sousa02/",
+          cargo: "Membro"
+        },
+        {
+          title: "Leo Moretti",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/142427220_4238768629485650_3602411903772484134_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=7QaYkwCV3oIAX-QC7im&oh=06834fc9e985465f53a8f9c2e825fd65&oe=607A024D",
+          instagram: "https://www.instagram.com/leozmoretti/",
+          cargo: "Membro"
+        },
+        {
+          title: "Caio Di Bene",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/72637924_2611436672277116_634766556844261376_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=c-OvFgM-u3IAX8DcPC1&oh=fcdd5497439a5c7cc8e098c4c7d70fe3&oe=60791532",
+          instagram: "https://www.instagram.com/caiodibene10/",
+          cargo: "Membro"
+        },
+        {
+          title: "Felipe Trevisan",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/92018341_1159655487760060_28905357535346688_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=jVI6bWrq5FYAX_dbiRH&oh=77bae3c70fa2bc191ac498cf14434925&oe=6078EBC4",
+          instagram: "https://www.instagram.com/felipe_trevisan17/",
+          cargo: "Membro"
+        },
+        {
+          title: "Matheus Cazelato",
+          image:
+            "https://instagram.fcpq10-1.fna.fbcdn.net/v/t51.2885-19/s150x150/89258241_131264614957484_3307457622050865152_n.jpg?tp=1&_nc_ht=instagram.fcpq10-1.fna.fbcdn.net&_nc_ohc=Jt068-WuhRoAX8GHo_r&oh=b0f3fc6945391aa2e172f5be8c52066b&oe=607977E7",
+          instagram: "https://www.instagram.com/len_ha_dor/",
+          cargo: "Membro"
+        }
+      ]
+    };
+  },
+  computed: {
+    resultQuery() {
+      if (this.searchQuery) {
+        return this.resources.filter(item => {
+          return this.searchQuery
+            .toLowerCase()
+            .split(" ")
+            .every(v => item.title.toLowerCase().includes(v));
+        });
+      } else {
+        return this.resources;
+      }
+    }
   },
   methods: {
     ativaSpinner() {
@@ -82,5 +150,100 @@ export default {
   max-width: 120.7px;
   max-height: 120.7px;
   margin: 10px;
+}
+img {
+  border-radius: 50%;
+}
+.before-enter {
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  transform: translatey(10px);
+}
+.enter {
+  opacity: 1;
+  transform: translatey(0px);
+}
+span {
+  font-weight: bold;
+}
+$primary: #00ffd5b7;
+$secondary: #8bf500;
+$white: rgb(221, 221, 221);
+$gray: #16ff29;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary, $secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+/* demo */
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222222;
+}
+.form__field {
+  width: 100%;
 }
 </style>
