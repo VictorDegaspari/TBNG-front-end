@@ -23,14 +23,7 @@
           >YouTube</b-button
         >
         <p></p>
-        <transition
-          name="fade"
-          mode="out-in"
-          :duration="{ enter: 0, leave: 0 }"
-          appear
-        >
-          <component ativaSpinner :is="component"></component>
-        </transition>
+        <component v-scrollanimation :is="component"></component>
         <p></p>
         <!-- <Container class="comments">
           <form @submit="submit"  method="post">
@@ -101,5 +94,12 @@ export default {
 }
 .comments {
   color: black;
+}
+.before-enter {
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+.enter {
+  opacity: 1;
 }
 </style>
